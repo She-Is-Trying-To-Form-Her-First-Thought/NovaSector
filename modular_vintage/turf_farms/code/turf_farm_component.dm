@@ -44,16 +44,18 @@
 /datum/component/turf_farm/proc/check_examine(datum/source, mob/user, list/examine_list)
 	examine_list += span_notice("You can plant <b>seeds</b> in [turf_parent]")
 	switch(soil_effectiveness)
-		if(0 to 1)
+		if(0 to 0.5)
+			examine_list += span_notice("[turf_parent] appears to be exceptionally poor quality planting space, however...")
+		if(0.6 to 0.9)
 			examine_list += span_notice("[turf_parent] appears to be pretty poor quality planting space, however...")
-		if(1 to 2)
+		if(1 to 1.9)
 			examine_list += span_notice("[turf_parent] looks to be pretty average planting space, too...")
-		if(2 to 3)
+		if(2 to 2.9)
 			examine_list += span_notice("[turf_parent] looks like a pretty good spot to grow plants, too...")
-		if(3 to 4)
+		if(3 to 3.9)
 			examine_list += span_notice("[turf_parent] looks like a rich spot to grow plants, they would flourish here...")
 		else
-			examine_list += span_notice("[turf_parent] looks like an exceptionally rich spot to grow plants, rivaling the strongest of soils...")
+			examine_list += span_notice("[turf_parent] looks like an exceptionally rich spot to grow plants, any greenery here would be beyond flourishing...")
 
 /// Deletes the stored farm plot if there is one
 /datum/component/turf_farm/proc/delete_farm()

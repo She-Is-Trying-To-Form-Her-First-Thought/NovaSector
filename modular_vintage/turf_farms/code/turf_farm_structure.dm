@@ -1,6 +1,6 @@
 /obj/machinery/hydroponics/turf_farm
 	name = "farmable land"
-	desc = "A path of terrain that happens to be prepared for farming on."
+	desc = "A pile of the floor that happens to be prepared for farming on."
 	icon = 'modular_vintage/turf_farms/icons/turf_overlay.dmi'
 	icon_state = null
 	gender = PLURAL
