@@ -30,7 +30,6 @@
 		var/matrix/translation = new
 		translation.Translate(-8, -8)
 		transform = translation
-		icon = smooth_icon
 
 /turf/open/misc/dry_soil
 	name = "parched earth"
@@ -65,7 +64,6 @@
 		var/matrix/translation = new
 		translation.Translate(-8, -8)
 		transform = translation
-		icon = smooth_icon
 
 /turf/open/misc/regular_soil
 	name = "rocky soil"
@@ -99,7 +97,6 @@
 		var/matrix/translation = new
 		translation.Translate(-8, -8)
 		transform = translation
-		icon = smooth_icon
 
 /turf/open/misc/muck_slop
 	name = "rich mud"
@@ -136,7 +133,6 @@
 		var/matrix/translation = new
 		translation.Translate(-8, -8)
 		transform = translation
-		icon = smooth_icon
 
 /turf/open/misc/fire_clay
 	name = "fire clay"
@@ -169,4 +165,3 @@
 		var/matrix/translation = new
 		translation.Translate(-8, -8)
 		transform = translation
-		icon = smooth_icon
