@@ -24,6 +24,14 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
+/turf/open/misc/desert_sand/Initialize(mapload)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-8, -8)
+		transform = translation
+		icon = smooth_icon
+
 /turf/open/misc/dry_soil
 	name = "parched earth"
 	desc = "While this may have been normal, vibrant earth in some time past, that time is certainly not the present. \
@@ -35,7 +43,6 @@
 	icon_state = "dry_dirt"
 	base_icon_state = "dry_dirt"
 	tiled_dirt = FALSE
-	SET_BASE_PIXEL(-8, -8)
 
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_CARPET_SIMPLE_NEON_VIOLET_NODOTS
@@ -54,6 +61,11 @@
 /turf/open/misc/dry_soil/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/turf_farm, 0.5)
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-8, -8)
+		transform = translation
+		icon = smooth_icon
 
 /turf/open/misc/regular_soil
 	name = "rocky soil"
@@ -65,7 +77,6 @@
 	icon_state = "dirt"
 	base_icon_state = "dirt"
 	tiled_dirt = FALSE
-	SET_BASE_PIXEL(-8, -8)
 
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_CARPET_SIMPLE_NEON_PURPLE_NODOTS
@@ -84,6 +95,11 @@
 /turf/open/misc/regular_soil/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/turf_farm, 0.7)
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-8, -8)
+		transform = translation
+		icon = smooth_icon
 
 /turf/open/misc/muck_slop
 	name = "rich mud"
@@ -96,7 +112,6 @@
 	icon_state = "mud"
 	base_icon_state = "mud"
 	tiled_dirt = FALSE
-	SET_BASE_PIXEL(-8, -8)
 
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_CARPET_SIMPLE_NEON_BLUE_NODOTS
@@ -107,9 +122,9 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/misc/muck_slop
 
-	footstep = FOOTSTEP_MEAT
-	barefootstep = FOOTSTEP_MEAT
-	clawfootstep = FOOTSTEP_MEAT
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	slowdown = 0.3
@@ -117,6 +132,11 @@
 /turf/open/misc/muck_slop/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/turf_farm, 1)
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-8, -8)
+		transform = translation
+		icon = smooth_icon
 
 /turf/open/misc/fire_clay
 	name = "fire clay"
@@ -128,7 +148,6 @@
 	icon_state = "clay"
 	base_icon_state = "clay"
 	tiled_dirt = FALSE
-	SET_BASE_PIXEL(-8, -8)
 
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_CARPET_SIMPLE_NEON_CYAN_NODOTS
@@ -143,3 +162,11 @@
 	barefootstep = FOOTSTEP_WATER
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/misc/fire_clay/Initialize(mapload)
+	. = ..()
+	if(smoothing_flags)
+		var/matrix/translation = new
+		translation.Translate(-8, -8)
+		transform = translation
+		icon = smooth_icon
