@@ -12,6 +12,7 @@
 	self_sustaining_overlay_icon_state = null
 	maxnutri = 30
 	self_sustaining = TRUE
+	pixel_z = 0
 	var/random_icons_list = list(
 		"farm_overlay_horizontal",
 		"farm_overlay_vertical",
@@ -25,7 +26,7 @@
 	return
 
 /obj/machinery/hydroponics/turf_farm/CtrlClick(mob/user)
-	return //Soil has no electricity.
+	return
 
 /obj/machinery/hydroponics/turf_farm/on_deconstruction(disassembled)
 	return
