@@ -462,9 +462,9 @@
 
 /obj/machinery/hydroponics/update_appearance(updates)
 	. = ..()
-	if(self_sustaining)
-		set_light(3)
-		return
+	// if(self_sustaining) ## VINTAGEJAKS EDIT - FUCK OFF HYDROPONICS LIGHTS!!!
+		// set_light(3)
+		// return
 	if(myseed?.get_gene(/datum/plant_gene/trait/glow)) // Hydroponics needs a refactor, badly.
 		var/datum/plant_gene/trait/glow/G = myseed.get_gene(/datum/plant_gene/trait/glow)
 		set_light(G.glow_range(myseed), G.glow_power(myseed), G.glow_color)
