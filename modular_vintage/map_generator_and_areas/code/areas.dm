@@ -14,7 +14,7 @@
 	requires_power = TRUE
 
 /area/vintage/surface_generator
-	name = "Surface Map Generator"
+	name = "Surface Desert"
 	map_generator = /datum/map_generator/vintage_surface_generator
 	area_has_base_lighting = TRUE
 	base_lighting_alpha = 255

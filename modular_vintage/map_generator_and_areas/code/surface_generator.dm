@@ -39,11 +39,11 @@
 		var/datum/biome/selected_biome
 
 		switch(biome_type)
-			if(0 to 0.03)
+			if(0 to 0.015)
 				selected_biome = BIOME_POND
-			if(0.03 to 0.06)
+			if(0.015 to 0.04)
 				selected_biome = BIOME_POND_SURROUNDINGS
-			if(0.06 to 0.1)
+			if(0.04 to 0.1)
 				selected_biome = BIOME_SLOP
 			if(0.1 to 0.25)
 				selected_biome = BIOME_REGULAR_SOIL
