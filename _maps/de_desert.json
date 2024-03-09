@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"map_name": "Open Desert",
+	"map_path": "map_files/vintage",
+	"map_file": "de_desert.dmm",
+	"space_ruin_levels": 0,
+	"minetype": "none",
+	"ignored_unit_tests": [
+		"/datum/unit_test/antag_moodlets",
+		"/datum/unit_test/job_roundstart_spawnpoints",
+		"/datum/unit_test/required_map_items",
+		"/datum/unit_test/space_dragon_expiration",
+		"/datum/unit_test/traitor"
+	]
+}
