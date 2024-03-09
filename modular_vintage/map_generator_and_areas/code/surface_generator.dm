@@ -9,7 +9,7 @@
 	var/name = "DE_DESERT Surface Generator"
 
 	/// Used to select "zoom" level into the perlin noise, higher numbers result in slower transitions
-	var/perlin_zoom = 50
+	var/perlin_zoom = 25
 
 /datum/map_generator/vintage_surface_generator/generate_terrain(list/turfs, area/generate_in)
 	. = ..()
@@ -39,11 +39,11 @@
 		var/datum/biome/selected_biome
 
 		switch(biome_type)
-			if(0 to 0.05)
+			if(0 to 0.03)
 				selected_biome = BIOME_POND
-			if(0.05 to 0.07)
+			if(0.03 to 0.06)
 				selected_biome = BIOME_POND_SURROUNDINGS
-			if(0.07 to 0.1)
+			if(0.06 to 0.1)
 				selected_biome = BIOME_SLOP
 			if(0.1 to 0.25)
 				selected_biome = BIOME_REGULAR_SOIL

@@ -16,6 +16,8 @@
 /area/vintage/surface_generator
 	name = "Surface Map Generator"
 	map_generator = /datum/map_generator/vintage_surface_generator
+	area_has_base_lighting = TRUE
+	base_lighting_alpha = 255
 
 /area/vintage/caves
 	name = "Underground"
