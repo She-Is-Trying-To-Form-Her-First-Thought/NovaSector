@@ -20,7 +20,7 @@
 	var/feature_spawn_chance = 25
 
 /datum/biome/vintage/generate_turf(turf/gen_turf, closed, area/generate_in, mobs_allowed)
-	var/turf/new_turf = pick_weight(closed ? weighted_closed_turf_types : weighted_open_turf_types)
+	var/turf/new_turf = closed ? closed_turf_type : open_turf_type
 	new_turf = new new_turf(gen_turf)
 
 	// If the turf is closed we do not need to bother with features
