@@ -8189,4 +8189,5 @@
 #include "modular_vintage\turf_farms\code\turf_farm_component.dm"
 #include "modular_vintage\turf_farms\code\turf_farm_structure.dm"
 #include "modular_vintage\turfs\code\dirt.dm"
+#include "modular_vintage\turfs\code\water.dm"
 // END_INCLUDE
