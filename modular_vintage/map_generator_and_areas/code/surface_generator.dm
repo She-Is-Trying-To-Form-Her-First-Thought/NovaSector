@@ -10,6 +10,8 @@
 
 	/// Used to select "zoom" level into the perlin noise, higher numbers result in slower transitions
 	var/perlin_zoom = 25
+	/// The zoom level of the perlin generator for the dunegrass around the map, higher number = slower transition
+	var/perlin_grass_zoom = 10
 
 /datum/map_generator/vintage_surface_generator/generate_terrain(list/turfs, area/generate_in)
 	. = ..()
@@ -17,6 +19,7 @@
 	var/mobs_allowed = (generate_in.area_flags & MOB_SPAWN_ALLOWED)
 
 	var/biome_seed = rand(0, 50000)
+	var/grass_seed = rand(0, 50000)
 
 	var/start_time = REALTIMEOFDAY
 
@@ -54,6 +57,19 @@
 
 		selected_biome = SSmapping.biomes[selected_biome] //Get the instance of this biome from SSmapping
 		selected_biome.generate_turf(gen_turf, closed, generate_in, mobs_allowed)
+
+		var/grass_perlin_x = gen_turf.x / perlin_grass_zoom
+		var/grass_perlin_y = gen_turf.y / perlin_grass_zoom
+
+		var/grass_type = text2num(rustg_noise_get_at_coordinates("[grass_seed]", "[grass_perlin_x]", "[grass_perlin_y]"))
+
+		switch(grass_type)
+			if(0 to 0.1)
+				new /obj/structure/flora/dunegrass/tall(gen_turf)
+			if(0.1 to 0.25)
+				new /obj/structure/flora/dunegrass(gen_turf)
+			if(0.25 to 0.4)
+				new /obj/structure/flora/dunegrass/short(gen_turf)
 
 		CHECK_TICK
 
