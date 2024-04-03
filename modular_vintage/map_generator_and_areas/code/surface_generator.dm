@@ -12,6 +12,11 @@
 	var/perlin_zoom = 40
 	/// The zoom level of the perlin generator for the dunegrass around the map, higher number = slower transition
 	var/perlin_grass_zoom = 10
+	/// List of turfs we ignore for grass generation
+	var/list/no_flora_turfs = list(
+		/turf/open/misc/desert_sand,
+		/turf/open/water/vintage,
+	)
 
 /datum/map_generator/vintage_surface_generator/generate_terrain(list/turfs, area/generate_in)
 	. = ..()
@@ -58,13 +63,22 @@
 		selected_biome = SSmapping.biomes[selected_biome] //Get the instance of this biome from SSmapping
 		selected_biome.generate_turf(gen_turf, closed, generate_in, mobs_allowed)
 
-		var/grass_perlin_x = gen_turf.x / perlin_grass_zoom
-		var/grass_perlin_y = gen_turf.y / perlin_grass_zoom
+		CHECK_TICK
+
+	for(var/iterated_turf in turfs) // Now we go through and add all the extra stuff
+		// We won't even bother generating flora onto a turf we can't do flora on
+		if(is_type_in_list(iterated_turf, no_flora_turfs))
+			continue
+
+		var/turf/our_turf = iterated_turf
+
+		var/grass_perlin_x = our_turf.x / perlin_grass_zoom
+		var/grass_perlin_y = our_turf.y / perlin_grass_zoom
 
 		var/grass_type = text2num(rustg_noise_get_at_coordinates("[grass_seed]", "[grass_perlin_x]", "[grass_perlin_y]"))
 
-		if((grass_type <= 0.3) && (selected_biome != BIOME_POND) && (selected_biome != BIOME_DE_DESERT))
-			new /obj/structure/flora/dunegrass(gen_turf)
+		if(grass_type <= 0.3)
+			new /obj/structure/flora/dunegrass(our_turf)
 
 		CHECK_TICK
 
