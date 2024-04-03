@@ -8253,6 +8253,7 @@
 #include "modular_vintage\map_generator_and_areas\code\surface_generator.dm"
 #include "modular_vintage\map_generator_and_areas\code\biome_types\desert_biomes.dm"
 #include "modular_vintage\map_generator_and_areas\code\biome_types\pond_biomes.dm"
+#include "modular_vintage\random_resources\code\rocks_spawner.dm"
 #include "modular_vintage\turf_farms\code\turf_farm_component.dm"
 #include "modular_vintage\turf_farms\code\turf_farm_structure.dm"
 #include "modular_vintage\turfs\code\dirt.dm"
