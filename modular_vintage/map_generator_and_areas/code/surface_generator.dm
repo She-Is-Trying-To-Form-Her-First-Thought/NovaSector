@@ -64,7 +64,7 @@
 		var/grass_type = text2num(rustg_noise_get_at_coordinates("[grass_seed]", "[grass_perlin_x]", "[grass_perlin_y]"))
 
 		if((grass_type <= 0.3) && (selected_biome != BIOME_POND) && (selected_biome != BIOME_DE_DESERT))
-			new /obj/structure/flora/dunegrass/tall(gen_turf)
+			new /obj/structure/flora/dunegrass(gen_turf)
 
 		CHECK_TICK
 
