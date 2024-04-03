@@ -9,7 +9,7 @@
 	var/name = "DE_DESERT Surface Generator"
 
 	/// Used to select "zoom" level into the perlin noise, higher numbers result in slower transitions
-	var/perlin_zoom = 25
+	var/perlin_zoom = 40
 	/// The zoom level of the perlin generator for the dunegrass around the map, higher number = slower transition
 	var/perlin_grass_zoom = 10
 
@@ -44,7 +44,7 @@
 		switch(biome_type)
 			if(0 to 0.015)
 				selected_biome = BIOME_POND
-			if(0.015 to 0.04)
+			if(0.015 to 0.03)
 				selected_biome = BIOME_POND_SURROUNDINGS
 			if(0.04 to 0.1)
 				selected_biome = BIOME_SLOP
@@ -63,13 +63,8 @@
 
 		var/grass_type = text2num(rustg_noise_get_at_coordinates("[grass_seed]", "[grass_perlin_x]", "[grass_perlin_y]"))
 
-		switch(grass_type)
-			if(0 to 0.1)
-				new /obj/structure/flora/dunegrass/tall(gen_turf)
-			if(0.1 to 0.25)
-				new /obj/structure/flora/dunegrass(gen_turf)
-			if(0.25 to 0.4)
-				new /obj/structure/flora/dunegrass/short(gen_turf)
+		if((grass_type <= 0.3) && (selected_biome != BIOME_POND) && (selected_biome != BIOME_DE_DESERT))
+			new /obj/structure/flora/dunegrass/tall(gen_turf)
 
 		CHECK_TICK
 

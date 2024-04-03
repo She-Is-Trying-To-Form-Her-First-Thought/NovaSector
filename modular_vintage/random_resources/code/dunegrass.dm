@@ -2,7 +2,8 @@
 	name = "dunegrass"
 	desc = "A tall-growing species of grass, one of the few plants that can actually grow in this environment."
 	icon = 'modular_vintage/random_resources/icons/dunegrass.dmi'
-	icon_state = "dunegrass_normal"
+	icon_state = "dunegrass-255"
+	base_icon_state = "dunegrass"
 	layer = ABOVE_MOB_LAYER
 	product_types = list()
 	harvest_with_hands = TRUE
@@ -11,6 +12,9 @@
 	harvest_verb = "cut"
 	can_uproot = FALSE
 	delete_on_harvest = TRUE
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = SMOOTH_GROUP_HEDGE_FLUFF
+	canSmoothWith = SMOOTH_GROUP_HEDGE_FLUFF
 
 /obj/structure/flora/dunegrass/Initialize(mapload)
 	. = ..()
@@ -24,15 +28,3 @@
 	if(!ismob(AM))
 		return
 	Shake(2, 2, 1 SECONDS)
-
-/obj/structure/flora/dunegrass/tall
-	name = "tall dunegrass"
-	icon_state = "dunegrass_tall"
-	harvest_amount_high = 5
-	harvest_amount_low = 2
-
-/obj/structure/flora/dunegrass/short
-	name = "short dunegrass"
-	icon_state = "dunegrass_short"
-	harvest_amount_high = 3
-	harvest_amount_low = 0
