@@ -27,4 +27,4 @@
 	SIGNAL_HANDLER
 	if(!ismob(AM))
 		return
-	Shake(2, 2, 1 SECONDS)
+	Shake(1, 1, 1 SECONDS)
