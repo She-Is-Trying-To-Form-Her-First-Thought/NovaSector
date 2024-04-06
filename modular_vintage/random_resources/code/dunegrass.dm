@@ -5,7 +5,9 @@
 	icon_state = "dunegrass-255"
 	base_icon_state = "dunegrass"
 	layer = ABOVE_MOB_LAYER
-	product_types = list()
+	product_types = list(
+		/obj/item/dunegrass,
+	)
 	harvest_with_hands = TRUE
 	harvest_amount_high = 4
 	harvest_amount_low = 1
@@ -28,3 +30,12 @@
 	if(!ismob(AM))
 		return
 	Shake(1, 1, 1 SECONDS)
+
+// Harvestable dunegrass item
+
+/obj/item/dunegrass
+	name = "dunegrass clump"
+	desc = "A clump of cut dunegrass, ready to be used for all sorts of activities."
+	icon = 'modular_vintage/random_resources/icons/harvested_plants.dmi'
+	icon_state = "dunegrass_clump"
+	resistance_flags = FLAMMABLE
