@@ -12,6 +12,7 @@
 	harvest_amount_high = 4
 	harvest_amount_low = 1
 	harvest_verb = "cut"
+	opacity = TRUE
 	can_uproot = FALSE
 	delete_on_harvest = TRUE
 	smoothing_flags = SMOOTH_BITMASK
